@@ -58,6 +58,8 @@ class Application:
             for i, word in enumerate(clean_ing.split(' ')):
                 if i == 0:
                     quantity = 0
+                    if word.isalpha():
+                        continue
                     for num in word:
                         quantity += unicodedata.numeric(num)
                 for name in self.nutritions['name']:
@@ -79,6 +81,7 @@ class Application:
         elements = self.get_all_elements_by_type(json['Url'], "li")
         predictions = self.predict_on_elements(elements)
         ing, ins = self.ing_and_ins(predictions, elements)
+        print(ing)
         values = self.values_by_ingredients(ing)
         return ing, values, '\n\n'.join(ins.splitlines())
 
