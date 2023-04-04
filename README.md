@@ -1,12 +1,12 @@
 # Recipe_Classification
 
-An API application that handling 1 POST request of the following Url: http://localhost:5000/AiDock.
+## An API application that handling 1 POST request of the following Url: http://localhost:5000/AiDock.
 JSON of the request must be like:
 {
   "Url" : "https://www.loveandlemons.com/pumpkin-bread/"
 }
 
-Runtime analysis:
+## Runtime analysis:
 
   handle_request function - 
     get_all_elements_by_type function O(elements) O(n).
